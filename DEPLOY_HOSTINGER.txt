@@ -1,0 +1,44 @@
+Hostinger VPS Upload - Quick Commands
+
+Recommended path: upload this ZIP as doom.zip and serve it with Nginx.
+
+1. On Windows PowerShell, from Downloads:
+
+cd $env:USERPROFILE\Downloads
+scp .\doom.zip root@YOUR_VPS_IP:/tmp/doom.zip
+
+2. In Hostinger VPS Browser Terminal:
+
+sudo apt update
+sudo apt install -y nginx unzip
+sudo systemctl enable --now nginx
+sudo rm -rf /var/www/doomscrolling
+sudo mkdir -p /var/www/doomscrolling
+sudo unzip -o /tmp/doom.zip -d /var/www/doomscrolling
+sudo chown -R www-data:www-data /var/www/doomscrolling
+
+3. Nginx config:
+
+sudo tee /etc/nginx/sites-available/doomscrolling > /dev/null <<'EOF'
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+    root /var/www/doomscrolling;
+    index index.html;
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+EOF
+
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/doomscrolling /etc/nginx/sites-enabled/doomscrolling
+sudo nginx -t
+sudo systemctl reload nginx
+
+4. Open:
+
+http://YOUR_VPS_IP
+
+5. For a domain, create an A record pointing the domain or subdomain to YOUR_VPS_IP.

@@ -1,0 +1,33 @@
+Real educational video sources used for prototype feed
+
+These are embedded with YouTube's standard iframe embed format. They are used as external, streaming content and are not downloaded into this ZIP.
+
+AI tools every student should try:
+https://www.youtube.com/shorts/BKlXKpTkDqk
+
+ChatGPT prompts for students:
+https://www.youtube.com/shorts/eZG1EzzkPjA
+
+Password practices and 2FA:
+https://www.youtube.com/shorts/qZ5C4NLnXrA
+
+Cybersecurity simplified MFA:
+https://www.youtube.com/shorts/6FpLATsI6F0
+
+AWS cloud computing explained:
+https://www.youtube.com/shorts/V7S10pZFxFk
+
+Spaced repetition study method:
+https://www.youtube.com/shorts/aj8qmsfOncg
+
+Budgeting tips for beginners:
+https://www.youtube.com/shorts/mjYHUQHbGYU
+
+Resume tips:
+https://www.youtube.com/shorts/znlWTLJFw4E
+
+Python list comprehension trick:
+https://www.youtube.com/shorts/Wd7OfdpOfxA
+
+Time management tips:
+https://www.youtube.com/shorts/cgbQw6EOLR8

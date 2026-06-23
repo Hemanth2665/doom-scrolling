@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#061a3a" />
+  <meta name="description" content="Doom Scrolling is a TikTok-style learning prototype where every scroll teaches something useful." />
+  <title>Doom Scrolling - Pitch Ready Prototype</title>
+  <link rel="icon" href="assets/img/app-icon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="ionized">
+  <div class="background-grid" aria-hidden="true"></div>
+  <div class="background-orb orb-a" aria-hidden="true"></div>
+  <div class="background-orb orb-b" aria-hidden="true"></div>
+
+  <header class="site-nav" id="siteTop">
+    <a class="site-logo" href="#top" aria-label="Doom Scrolling home">
+      <span class="logo-mark">DS</span>
+      <span>
+        <b>Doom Scrolling</b>
+        <small>Useful reels prototype</small>
+      </span>
+    </a>
+    <nav class="site-links" aria-label="Page navigation">
+      <a href="#prototype">Demo</a>
+      <a href="#about">About</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-theme" id="navThemeBtn" type="button">Theme Studio</button>
+      <button class="nav-launch" id="navLaunchBtn" type="button">Launch Demo</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-section" id="prototype">
+      <div class="hero-copy">
+        <p class="overline">Pitch ready clickable demo</p>
+        <h1>Turn doom scrolling into skill building.</h1>
+        <p class="hero-lede">Doom Scrolling keeps the addictive vertical video experience, but replaces low-value content with useful short lessons in AI, cybersecurity, cloud, study, finance, and career growth.</p>
+        <div class="hero-actions">
+          <button class="primary-action" id="launchDemoBtn" type="button">Open app demo</button>
+          <a class="secondary-action" href="#about">Read the pitch</a>
+        </div>
+        <div class="hero-metrics" aria-label="Prototype metrics">
+          <div><b>10</b><span>real video reels</span></div>
+          <div><b>6</b><span>working app tabs</span></div>
+          <div><b>5</b><span>color themes</span></div>
+        </div>
+        <div class="founder-note">
+          <span class="dot-live"></span>
+          <p>Send this link to friends. They can scroll inside the phone, switch colors, open tabs, unlock Premium demo, and read the product idea below.</p>
+        </div>
+      </div>
+
+      <div class="demo-column">
+        <div class="device-toolbar" aria-label="Demo tools">
+          <button id="desktopFullscreenBtn" type="button">Fullscreen app</button>
+          <button id="toolbarThemeBtn" type="button">Change colors</button>
+          <button id="resetDemoBtn" type="button">Reset demo</button>
+        </div>
+
+        <section class="phone-frame" id="phoneFrame" aria-label="Doom Scrolling mobile app prototype">
+          <button class="close-fullscreen" id="closeFullscreenBtn" type="button" aria-label="Close fullscreen app">Close</button>
+          <div class="phone-shell">
+            <div class="dynamic-island" aria-hidden="true"></div>
+            <div class="status-row" aria-hidden="true">
+              <span id="statusTime">9:41</span>
+              <span>5G&nbsp;&nbsp;▰</span>
+            </div>
+
+            <div class="app-screen active-screen" id="screenFeed" data-screen="feed" aria-label="Vertical learning feed">
+              <header class="app-header">
+                <button class="app-brand" data-open="feed" type="button" aria-label="Back to feed">
+                  <span class="app-logo">DS</span>
+                  <span>
+                    <small>Doom Scrolling</small>
+                    <b id="appTitle">For You</b>
+                  </span>
+                </button>
+                <button class="search-round" data-open="search" type="button" aria-label="Open search">Search</button>
+              </header>
+              <div class="topic-tabs" id="topicTabs" aria-label="Feed topics"></div>
+              <div class="reels" id="reels" tabindex="0" aria-label="Swipe or scroll through real educational reels"></div>
+            </div>
+
+            <section class="app-screen panel-screen" id="screenSearch" data-screen="search" aria-label="Search screen">
+              <div class="panel-head">
+                <button class="back-btn" data-open="feed" type="button">Back</button>
+                <div><small>Discover</small><h2>Search useful reels</h2></div>
+              </div>
+              <label class="search-box" for="searchInput">
+                <span>Search</span>
+                <input id="searchInput" type="search" placeholder="AI agents, cyber, finance, interview..." autocomplete="off" />
+              </label>
+              <div class="quick-topics" id="quickTopics"></div>
+              <div class="section-row"><h3>Results</h3><span id="resultCount">0 videos</span></div>
+              <div class="result-list" id="resultList"></div>
+            </section>
+
+            <section class="app-screen panel-screen" id="screenProfile" data-screen="profile" aria-label="Profile screen">
+              <div class="panel-head no-back">
+                <div><small>Learner profile</small><h2>Hemanth Raj</h2></div>
+                <button class="text-pill" data-open="feed" type="button">Scroll</button>
+              </div>
+              <div class="profile-card glass-card">
+                <div class="avatar-xl">HR</div>
+                <div>
+                  <h3>@hemanthlearns</h3>
+                  <p>Building a useful short-video platform with learning streaks, XP, creator tools, and Premium lessons.</p>
+                </div>
+              </div>
+              <div class="stat-grid">
+                <div><b id="profileXp">0</b><span>XP</span></div>
+                <div><b>28</b><span>day streak</span></div>
+                <div><b id="profileSaved">0</b><span>saved</span></div>
+              </div>
+              <div class="path-card glass-card">
+                <div class="path-top"><div><h3>Cybersecurity analyst path</h3><p>Next milestone: practical web security</p></div><b>72%</b></div>
+                <div class="progress"><span style="width:72%"></span></div>
+              </div>
+              <div class="section-row"><h3>Saved reels</h3><button class="link-btn" data-open="feed" type="button">Back to feed</button></div>
+              <div class="saved-list" id="savedList"></div>
+            </section>
+
+            <section class="app-screen panel-screen" id="screenDM" data-screen="dm" aria-label="Messages screen">
+              <div class="panel-head no-back">
+                <div><small>Community</small><h2>Messages</h2></div>
+                <button class="text-pill" id="newThreadBtn" type="button">New</button>
+              </div>
+              <div class="thread-list" id="threadList"></div>
+              <div class="chat-box glass-card">
+                <div class="chat-title"><span class="avatar-sm" id="chatAvatar">AI</span><div><b id="chatName">AI Study Group</b><small id="chatMeta">Active now</small></div></div>
+                <div class="chat-messages" id="chatMessages"></div>
+                <form class="chat-form" id="chatForm">
+                  <input id="chatInput" type="text" placeholder="Send a useful idea..." autocomplete="off" />
+                  <button type="submit">Send</button>
+                </form>
+              </div>
+            </section>
+
+            <section class="app-screen panel-screen" id="screenUpload" data-screen="upload" aria-label="Upload screen">
+              <div class="panel-head no-back">
+                <div><small>Creator Studio</small><h2>Upload useful reel</h2></div>
+                <span class="studio-badge">Beta</span>
+              </div>
+              <label class="upload-drop" for="uploadFile">
+                <input id="uploadFile" type="file" accept="video/*" hidden />
+                <span>+</span>
+                <b>Add a local video</b>
+                <small>For the prototype, this previews from your device and publishes only in this browser.</small>
+              </label>
+              <video id="uploadPreview" class="upload-preview" muted loop playsinline hidden></video>
+              <label class="field-label" for="uploadTitle">Title</label>
+              <input id="uploadTitle" class="field" type="text" value="3 AI tools every student should know" />
+              <label class="field-label" for="uploadCaption">Caption</label>
+              <textarea id="uploadCaption" class="field textarea">Summarize notes, generate flashcards, and practice interviews. Always verify important facts.</textarea>
+              <label class="field-label">Category</label>
+              <div class="option-row" id="uploadCategories"></div>
+              <label class="switch-row"><span><b>Premium lesson</b><small>Lock advanced content behind Premium</small></span><input id="premiumUpload" type="checkbox" /></label>
+              <button class="primary-wide" id="publishBtn" type="button">Publish demo reel</button>
+              <button class="secondary-wide" id="ideaBtn" type="button">Generate reel idea</button>
+            </section>
+
+            <section class="app-screen panel-screen" id="screenPremium" data-screen="premium" aria-label="Premium screen">
+              <div class="premium-hero glass-card">
+                <span class="premium-mark">PRO</span>
+                <small>Doom Scrolling Premium</small>
+                <h2>Deep learning after the hook.</h2>
+                <p>Premium turns a quick reel into complete mini-courses, labs, downloadable notes, and certificates.</p>
+              </div>
+              <div class="billing-toggle" id="billingToggle"><button class="active" data-billing="monthly" type="button">Monthly</button><button data-billing="yearly" type="button">Yearly</button></div>
+              <div class="price-card glass-card"><div><small>Pro Learner</small><h3 id="priceText">$4.99/mo</h3></div><button id="unlockBtn" class="primary-small" type="button">Unlock demo</button></div>
+              <div class="premium-list">
+                <div><b>Mini-courses</b><small>SQL, AI agents, cloud, careers</small></div>
+                <div><b>Download notes</b><small>Cheat sheets and summaries</small></div>
+                <div><b>Certificates</b><small>Show skill progress</small></div>
+                <div><b>Ad-free</b><small>Learning-first experience</small></div>
+              </div>
+              <div class="section-row"><h3>Premium preview</h3><button id="watchPremiumBtn" class="link-btn" type="button">Watch</button></div>
+              <div class="course-list" id="courseList"></div>
+            </section>
+
+            <section class="app-screen panel-screen" id="screenAnalytics" data-screen="analytics" aria-label="Analytics screen">
+              <div class="panel-head no-back">
+                <div><small>Learning analytics</small><h2>Your useful scroll</h2></div>
+                <button class="text-pill" data-open="feed" type="button">Home</button>
+              </div>
+              <div class="analytics-hero glass-card">
+                <div><small>Today</small><h3 id="watchTime">0m</h3><p>Learning time</p></div>
+                <div><small>Progress</small><h3 id="lessonsCount">0</h3><p>Lessons watched</p></div>
+              </div>
+              <div class="chart-card glass-card">
+                <div class="section-row"><h3>Topic growth</h3><span>Live demo</span></div>
+                <div class="bars" id="topicBars"></div>
+              </div>
+              <div class="summary-card glass-card">
+                <h3>AI summary</h3>
+                <p id="aiSummary">Scroll a few reels to generate a summary of what you learned.</p>
+              </div>
+              <div class="section-row"><h3>Top saved</h3><button class="link-btn" data-open="profile" type="button">View profile</button></div>
+              <div class="mini-reel-list" id="analyticsSaved"></div>
+            </section>
+
+            <nav class="bottom-nav" aria-label="Bottom app navigation">
+              <button class="nav-item active" data-open="feed" type="button"><span>Home</span></button>
+              <button class="nav-item" data-open="profile" type="button"><span>Profile</span></button>
+              <button class="nav-item" data-open="dm" type="button"><span>DM</span></button>
+              <button class="nav-item upload-nav" data-open="upload" type="button"><span>Upload</span></button>
+              <button class="nav-item" data-open="premium" type="button"><span>Premium</span></button>
+              <button class="nav-item" data-open="analytics" type="button"><span>Analytics</span></button>
+            </nav>
+          </div>
+        </section>
+
+        <p class="scroll-help">Tip: scroll inside the phone to move through real educational reels. Use Home anytime to return to the feed.</p>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="section-heading-large">
+        <p class="overline">What we are trying to make</p>
+        <h2>A short-form learning app that makes scrolling productive.</h2>
+        <p>Doom Scrolling is not trying to remove the habit of scrolling. It redirects that habit toward practical knowledge, skill progress, and creator-led micro-learning.</p>
+      </div>
+      <div class="feature-grid">
+        <article><span>01</span><h3>The problem</h3><p>People already spend hours scrolling short videos, but most feeds do not help them build skills or track what they learned.</p></article>
+        <article><span>02</span><h3>The solution</h3><p>Use the same vertical feed behavior, but make every reel useful: AI, cyber, cloud, finance, study, career, coding, and productivity.</p></article>
+        <article><span>03</span><h3>The learning layer</h3><p>Each reel can include XP, quizzes, saves, AI summaries, learning streaks, and progress analytics.</p></article>
+        <article><span>04</span><h3>The business model</h3><p>Free useful reels create engagement. Premium unlocks mini-courses, expert lessons, downloadable notes, labs, and certificates.</p></article>
+      </div>
+    </section>
+
+    <section class="details-section">
+      <div class="details-card pitch-card">
+        <p class="overline">Simple pitch</p>
+        <h2>TikTok for knowledge.</h2>
+        <p>Same addictive scrolling. Better outcome. Users finish a session with XP, saved lessons, summaries, and practical skills instead of only entertainment.</p>
+        <div class="pitch-pills"><span>AI learning paths</span><span>Creator monetization</span><span>Premium lessons</span><span>Analytics</span></div>
+      </div>
+      <div class="details-card" id="roadmap">
+        <p class="overline">Roadmap</p>
+        <ol class="roadmap-list">
+          <li><b>Prototype</b><span>Clickable web app, real educational reels, theme studio, pitch page.</span></li>
+          <li><b>MVP</b><span>User login, saved reels, creator uploads, basic recommendation feed.</span></li>
+          <li><b>Premium</b><span>Paid mini-courses, labs, certificates, expert creators.</span></li>
+          <li><b>AI layer</b><span>Personalized learning paths, daily summaries, quiz generation, skill analytics.</span></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <button class="theme-fab" id="themeFab" type="button" aria-label="Open color theme studio">Colors</button>
+  <aside class="theme-drawer" id="themeDrawer" aria-label="Color theme studio">
+    <div class="drawer-head"><div><small>Design tool</small><h2>Theme Studio</h2></div><button id="closeThemeBtn" type="button">Close</button></div>
+    <p class="drawer-copy">Meet wanted white and blue. Try it here, or test other palettes before pitching.</p>
+    <div class="theme-options" id="themeOptions"></div>
+    <div class="custom-theme-box">
+      <h3>Custom colors</h3>
+      <label>Primary <input type="color" id="primaryPicker" value="#6d5dfc" /></label>
+      <label>Secondary <input type="color" id="secondaryPicker" value="#00d4ff" /></label>
+      <button class="primary-wide" id="applyCustomTheme" type="button">Apply custom theme</button>
+      <button class="secondary-wide" id="copyThemeBtn" type="button">Copy CSS color code</button>
+    </div>
+    <pre class="color-code" id="colorCode">--primary: #6d5dfc;
+--secondary: #00d4ff;</pre>
+  </aside>
+
+  <div class="modal-backdrop" id="commentsModal" aria-hidden="true">
+    <div class="sheet comments-sheet" role="dialog" aria-modal="true" aria-label="Comments">
+      <div class="sheet-head"><div><small>Discussion</small><h2>Comments</h2></div><button class="close-modal" data-close="commentsModal" type="button">Close</button></div>
+      <div class="comment-list" id="commentList"></div>
+      <form class="comment-form" id="commentForm"><input id="commentInput" type="text" placeholder="Add a useful comment..." autocomplete="off" /><button type="submit">Post</button></form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="quizModal" aria-hidden="true">
+    <div class="sheet quiz-sheet" role="dialog" aria-modal="true" aria-label="Quiz">
+      <div class="sheet-head"><div><small>Quick quiz</small><h2 id="quizTitle">Question</h2></div><button class="close-modal" data-close="quizModal" type="button">Close</button></div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <p class="quiz-feedback" id="quizFeedback"></p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

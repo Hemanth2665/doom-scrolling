@@ -1,0 +1,21 @@
+{
+  "name": "Doom Scrolling Prototype",
+  "short_name": "DoomScroll",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#061a3a",
+  "description": "Useful reels mobile app prototype.",
+  "icons": [
+    {
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

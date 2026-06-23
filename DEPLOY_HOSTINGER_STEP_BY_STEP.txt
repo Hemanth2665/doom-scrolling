@@ -1,0 +1,64 @@
+Doom Scrolling Hostinger VPS Deployment
+
+Recommended project link:
+Use a separate domain later, such as doomscrolling.app, doomscrolling.ai, or doomscrolling.tech.
+For now, you can test by VPS IP first.
+
+1. Rename the ZIP to doom.zip on your Windows laptop.
+
+2. Open PowerShell on Windows:
+cd $env:USERPROFILE\Downloads
+scp .\doom.zip root@YOUR_VPS_IP:/tmp/doom.zip
+
+3. Open Hostinger hPanel -> VPS -> Manage -> Terminal.
+
+4. Install Nginx and unzip:
+sudo apt update
+sudo apt install -y nginx unzip
+sudo systemctl enable --now nginx
+
+5. Deploy files:
+sudo rm -rf /var/www/doomscrolling
+sudo mkdir -p /var/www/doomscrolling
+sudo unzip -o /tmp/doom.zip -d /var/www/doomscrolling
+sudo chown -R www-data:www-data /var/www/doomscrolling
+sudo find /var/www/doomscrolling -type d -exec chmod 755 {} \;
+sudo find /var/www/doomscrolling -type f -exec chmod 644 {} \;
+
+6. Create Nginx config:
+sudo tee /etc/nginx/sites-available/doomscrolling > /dev/null <<'NGINX'
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name _;
+
+    root /var/www/doomscrolling;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location ~* \.(svg|css|js|json|jpg|jpeg|png|gif|webp|mp4|webm|ico)$ {
+        expires 7d;
+        add_header Cache-Control "public";
+        try_files $uri =404;
+    }
+}
+NGINX
+
+7. Enable site:
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/doomscrolling /etc/nginx/sites-enabled/doomscrolling
+sudo nginx -t
+sudo systemctl reload nginx
+
+8. Open your browser:
+http://YOUR_VPS_IP
+
+9. Later, point a dedicated domain or subdomain to YOUR_VPS_IP with an A record and update server_name.
+
+10. After domain works, add HTTPS:
+sudo apt install -y certbot python3-certbot-nginx
+sudo certbot --nginx -d YOUR_DOMAIN
